@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tech-balance-sheet"
+version = "1.0.0"
+description = "Autonomous M&A Technical Due Diligence & Board-Level Software Balance Sheet OS"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Ahmed Hassan"}
+]
+keywords = [
+    "private-equity",
+    "due-diligence",
+    "valuation-haircut",
+    "technical-debt",
+    "cfo-metrics",
+    "software-capital",
+    "mergers-and-acquisitions"
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0"
+]
+
+[project.scripts]
+tech-balance-sheet = "tech_balance_sheet.cli:main"
