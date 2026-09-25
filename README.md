@@ -138,7 +138,72 @@ flowchart LR
 
 ---
 
-## Sample Outputs
+## Track 1: Private Equity 24-Hour Diligence Workflow
+
+The following sequence diagram details how the automated diligence engine interfaces with the target's Virtual Data Room (VDR), executes forensic analyzers, and arms the PE Deal Team with an Investment Committee memo before signing the LOI:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor DealTeam as PE Deal Team / Investment Committee
+    participant VDR as Target VDR & Codebase
+    participant Diligence as tech-balance-sheet Engine
+    participant Actuary as Forensic Actuarial Suite
+    actor TargetFounder as Target Company Founders
+
+    DealTeam->>VDR: Grant Ephemeral Access (Read-Only Git/Cloud)
+    VDR->>Diligence: Ingest Git Log, Dependencies & Telemetry
+    par Parallel Forensic Scans
+        Diligence->>Actuary: CVE & Cloud Exposure Audit
+        Diligence->>Actuary: Copyleft IP Contamination Scan (AGPL/GPL)
+        Diligence->>Actuary: Git Author Entropy & Bus-Factor Check
+        Diligence->>Actuary: Architectural Obsolescence & Test Capital
+    end
+    Actuary-->>Diligence: Raw Forensic Liabilities & Risk Ratios
+    Diligence->>Diligence: Compute Multiple Compression & Direct Dollar Deductions
+    Diligence->>Diligence: Formulate Escrow Holdback (150% of Direct Liabilities)
+    Diligence-->>DealTeam: Deliver IC Due Diligence Memo & Haircut Report
+    DealTeam->>TargetFounder: Present Re-negotiated Valuation & Escrow Clauses
+    Note over DealTeam,TargetFounder: Deal team captures $10M-$30M defensive purchase price reduction before signing LOI
+```
+
+---
+
+## Track 3: The Board & CFO Tech Debt P&L Drag Loop
+
+The following architectural model illustrates how technical debt acts as an uncapitalized tax on engineering payroll, and how targeted remediation unlocks a multi-year velocity dividend:
+
+```mermaid
+flowchart TD
+    subgraph Payroll ["Corporate P&L Budget Allocation"]
+        GROSS_PAYROLL["Total Engineering Payroll\n(e.g., $4.8M / year)"]
+    end
+
+    subgraph DebtDrag ["The Hidden Debt Interest Tax"]
+        DRAG_RATIO{"Technical Debt Drag Ratio\n(28.5% - 46.0%)"}
+        WASTED_CASH["Wasted Engineering Payroll\n($1.3M - $2.2M / year in friction)"]
+        EFFECTIVE_RD["Net Productive R&D Innovation\n(Remaining $2.6M - $3.4M capacity)"]
+        
+        GROSS_PAYROLL --> DRAG_RATIO
+        DRAG_RATIO -->|"Friction Loss"| WASTED_CASH
+        DRAG_RATIO -->|"Actual Velocity"| EFFECTIVE_RD
+    end
+
+    subgraph CFO_Action ["Board Capital Allocation Decision"]
+        AUDIT["tech-balance-sheet Audit\n(Identifies High-ROI Remediation Hotspots)"]
+        CAPEX["Targeted Year 1 Remediation Capex\n(e.g., $280k - $320k budget)"]
+        DIVIDEND["Annual Velocity Dividend\n(+$880k/year in unlocked developer capacity)"]
+        ROI["Projected 2-Year ROI: +380% to +530%"]
+
+        WASTED_CASH --> AUDIT
+        AUDIT --> CAPEX
+        CAPEX --> DIVIDEND
+        DIVIDEND --> ROI
+        ROI -->|"Reinvest in Core IP Assets"| GROSS_PAYROLL
+    end
+```
+
+---
 
 ### 1. Board Technical Balance Sheet
 ```text
